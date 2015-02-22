@@ -9,6 +9,16 @@ The `_length` function can be used as such:
       margin-top: _length(20000000 nanometers);
     }
     
+Want to rename it? Easy:
+
+    @function _($length) {
+      @return _length($length);
+    }
+    
+    h1 {
+      line-height: _(.0001 horses);
+    }
+    
 Demo: http://codepen.io/mknadler/full/dPmBqZ/
     
 Currently supported units:
