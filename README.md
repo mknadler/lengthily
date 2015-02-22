@@ -1,2 +1,2 @@
 # lengthily
-Extra length units in Sass
+Extra length units in Sass.

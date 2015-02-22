@@ -1,0 +1,12 @@
+@import "scale";
+@import "aliases";
+
+// Convert to pixels
+@function _length($length) {
+  $val: nth($length, 1);
+  $unit: nth($length, 2);
+  @if map-has-key($lengthily-aliases, $unit) {
+    $unit: map-get($lengthily-aliases, $unit);
+  }
+  @return 0px + ($val / map-get($units-per-px, $unit));
+}

@@ -1,0 +1,17 @@
+// unit scale
+$display-dpi: 96 !default;
+
+$units-per-px: (
+  in: (1 / $display-dpi),
+  nm: ((1 / $display-dpi) * 2.54) * 10000000,
+  mm: ((1 / $display-dpi) * 2.54) * 10,
+  cm: (1 / $display-dpi) * 2.54,
+  m: ((1 / $display-dpi) * 2.54) / 100,
+  km: ((1 / $display-dpi) * 2.54) / 100000,
+  px: $display-dpi,
+  mi: (1 / $display-dpi) * 1.57828e-5,
+  au: (1 / $display-dpi) * 1.699788513e-13,
+  ly: (1 / $display-dpi) * 2.68483946e-18,
+  hh: (1 / $display-dpi) / 4,
+  hl: (1 / $display-dpi) / 96
+);

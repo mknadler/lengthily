@@ -1,0 +1,30 @@
+// Generating aliases so that you can get lengths
+// By saying, e.g., "horses" instead of "hl"
+$lengthily-aliases: (
+  inch: in,
+  inches: in
+);
+$lengthily-add-s: hand hh,
+                  horse hl,
+                  horselength hl,
+                  pixel px,
+                  mile mi,
+                  lightyear ly,
+                  meter m,
+                  picometer pm,
+                  nanometer nm,
+                  millimeter mm,
+                  centimeter cm,
+                  decimeter dm,
+                  decameter dam,
+                  hectometer hm,
+                  kilometer km,
+                  megameter Mm,
+                  gigameter Gm,
+                  terameter Tm;
+
+// Add the above list of terms + properties to the $lengthily-aliases list.
+@for $i from 1 through length($lengthily-add-s){
+  $lengthily-aliases: map-merge($lengthily-aliases, (nth(nth($lengthily-add-s, $i), 1): nth(nth($lengthily-add-s, $i), 2)));
+  $lengthily-aliases: map-merge($lengthily-aliases, (nth(nth($lengthily-add-s, $i), 1) + 's': nth(nth($lengthily-add-s, $i), 2)));
+}
